@@ -107,3 +107,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+MASK_REQUEST_LOGS = "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\""
+
+PATH_ACCESS_LOG = '/home/andrew/Документы/access.log'
