@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Log(models.Model):
-    ip_address = models.GenericIPAddressField()
-    date_add = models.DateTimeField()
+    ip_address = models.GenericIPAddressField(db_index=True)
+    date_add = models.DateTimeField(db_index=True)
     remote_logname = models.CharField(max_length=128, default='-')
     remote_user = models.CharField(max_length=128, default='-')
     request_line = models.TextField(default='-')
@@ -12,8 +12,8 @@ class Log(models.Model):
     header_referer = models.CharField(max_length=256, default='-')
     header_user_agent = models.TextField(default='-')
 
-    created_at = models.DateTimeField(auto_now_add=True, db_index=True)
-    updated_at = models.DateTimeField(auto_now=True, db_index=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'Лог'
