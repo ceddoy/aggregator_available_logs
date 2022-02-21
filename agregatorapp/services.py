@@ -15,7 +15,7 @@ def load_logs():
             data_in_bd.append(Log(ip_address=line_parser_log.get('remote_host'),
                                   remote_logname=line_parser_log.get('remote_logname'),
                                   remote_user=line_parser_log.get('remote_user'),
-                                  date_create=line_parser_log.get('time_received_datetimeobj'),
+                                  date_add=line_parser_log.get('time_received_datetimeobj'),
                                   request_line=line_parser_log.get('request_first_line'),
                                   status=line_parser_log.get('status'),
                                   response_bytes=line_parser_log.get('response_bytes_clf'),
