@@ -110,6 +110,8 @@ REST_FRAMEWORK = {
     ],
 }
 
+# Запрос по логам для парсинга
 MASK_REQUEST_LOGS = "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\""
 
-PATH_ACCESS_LOG = '/home/andrew/Документы/access.log'
+# Путь до файлов с логами
+PATH_ACCESS_LOG = '/home/andrew/Документы/'
