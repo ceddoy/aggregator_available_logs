@@ -6,11 +6,11 @@ class Log(models.Model):
     date_add = models.DateTimeField()
     remote_logname = models.CharField(max_length=128, default='-')
     remote_user = models.CharField(max_length=128, default='-')
-    request_line = models.CharField(max_length=256, default='-')
+    request_line = models.TextField(default='-')
     status = models.CharField(max_length=4, default='-')
     response_bytes = models.CharField(max_length=128, default='-')
     header_referer = models.CharField(max_length=256, default='-')
-    header_user_agent = models.CharField(max_length=256, default='-')
+    header_user_agent = models.TextField(default='-')
 
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True, db_index=True)
