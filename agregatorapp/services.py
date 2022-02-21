@@ -1,3 +1,4 @@
+import datetime
 
 import apache_log_parser
 
@@ -28,3 +29,9 @@ def load_logs():
                                   header_user_agent=line_parser_log.get('request_header_user_agent')))
 
     return data_in_bd
+
+
+def get_date_end_day(date):
+    return (datetime.datetime(year=date.year, month=date.month, day=date.day) +
+            datetime.timedelta(days=1) -
+            datetime.timedelta(seconds=1))
