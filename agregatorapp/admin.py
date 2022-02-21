@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from agregatorapp.models import Log
+
+
+class LogAdmin(admin.ModelAdmin):
+    list_display = ('ip_address', 'date_add')
+
+
+admin.site.register(Log, LogAdmin)
