@@ -11,3 +11,8 @@ class LogListAPIView(ListAPIView):
     queryset = Log.objects.all()
     filterset_class = LogsFilter
     permission_classes = [IsAuthenticated, ]
+
+    def filter_queryset(self, queryset):
+        for backend in list(self.filter_backends):
+            queryset = backend().filter_queryset(self.request, queryset, self)
+        return queryset.order_by('date_add')
