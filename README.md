@@ -33,7 +33,9 @@
 Чтобы распарсить файл access logs Apache вручную и сохранить в БД, вам необходимо зайти в settings и установить:
 
 MASK_REQUEST_LOGS - запрос логов (по дефолу установлен)
+
 PATH_ACCESS_LOG - прописать путь до файла логов
+
 FILENAME_LOGS - имя файла логов
 
 После, в терминале проекта ввести:
@@ -41,6 +43,14 @@ FILENAME_LOGS - имя файла логов
 python manage.py fill_db_logs
 ```
 **Для работы парсинга файла access logs Apache через cron:**
+
+Также установите:
+
+MASK_REQUEST_LOGS - запрос логов (по дефолу установлен)
+
+PATH_ACCESS_LOG - прописать путь до файла логов
+
+FILENAME_LOGS - имя файла логов
 
 For Linux:
 
