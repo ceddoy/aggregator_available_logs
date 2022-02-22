@@ -2,7 +2,7 @@ import datetime
 
 import apache_log_parser
 
-from aggregator_available_logs.settings import PATH_ACCESS_LOG, MASK_REQUEST_LOGS
+from aggregator_available_logs.settings import PATH_ACCESS_LOG, MASK_REQUEST_LOGS, FILENAME_LOGS
 from agregatorapp.models import Log
 
 
@@ -12,7 +12,7 @@ from agregatorapp.models import Log
 
 def load_logs():
     data_in_bd = []
-    with open(f'{PATH_ACCESS_LOG}access.log', 'r') as f:
+    with open(f'{PATH_ACCESS_LOG}{FILENAME_LOGS}', 'r') as f:
         line_parser = apache_log_parser.make_parser(MASK_REQUEST_LOGS)
         for line_log in f.read().splitlines():
             if not line_log:
